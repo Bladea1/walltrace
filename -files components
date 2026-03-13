@@ -1,0 +1,18 @@
+[35mapp/[locale]/archive/[slug]/page.tsx[m[36m:[m[32m46[m[36m:[m[1;31m<<<<<<<[m HEAD
+[35mapp/[locale]/archive/[slug]/page.tsx[m[36m:[m[32m48[m[36m:[m[1;31m=======[m
+[35mapp/[locale]/archive/[slug]/page.tsx[m[36m:[m[32m50[m[36m:[m[1;31m>>>>>>>[m 79a5ba6cf827965ae447b20eac7da888d9156c3f
+[35mapp/[locale]/artists/page.tsx[m[36m:[m[32m28[m[36m:[m[1;31m<<<<<<<[m HEAD
+[35mapp/[locale]/artists/page.tsx[m[36m:[m[32m30[m[36m:[m[1;31m=======[m
+[35mapp/[locale]/artists/page.tsx[m[36m:[m[32m33[m[36m:[m[1;31m>>>>>>>[m 79a5ba6cf827965ae447b20eac7da888d9156c3f
+[35mapp/[locale]/page.tsx[m[36m:[m[32m133[m[36m:[m[1;31m<<<<<<<[m HEAD
+[35mapp/[locale]/page.tsx[m[36m:[m[32m135[m[36m:[m[1;31m=======[m
+[35mapp/[locale]/page.tsx[m[36m:[m[32m137[m[36m:[m[1;31m>>>>>>>[m 79a5ba6cf827965ae447b20eac7da888d9156c3f
+[35mapp/layout.tsx[m[36m:[m[32m2[m[36m:[m[1;31m<<<<<<<[m HEAD
+[35mapp/layout.tsx[m[36m:[m[32m21[m[36m:[m[1;31m=======[m
+[35mapp/layout.tsx[m[36m:[m[32m48[m[36m:[m[1;31m>>>>>>>[m 79a5ba6cf827965ae447b20eac7da888d9156c3f
+[35mlib/data.ts[m[36m:[m[32m424[m[36m:[m[1;31m<<<<<<<[m HEAD
+[35mlib/data.ts[m[36m:[m[32m441[m[36m:[m[1;31m=======[m
+[35mlib/data.ts[m[36m:[m[32m453[m[36m:[m[1;31m>>>>>>>[m 79a5ba6cf827965ae447b20eac7da888d9156c3f
+[35mtsconfig.json[m[36m:[m[32m42[m[36m:[m[1;31m<<<<<<<[m HEAD
+[35mtsconfig.json[m[36m:[m[32m44[m[36m:[m[1;31m=======[m
+[35mtsconfig.json[m[36m:[m[32m46[m[36m:[m[1;31m>>>>>>>[m 79a5ba6cf827965ae447b20eac7da888d9156c3f

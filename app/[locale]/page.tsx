@@ -79,13 +79,37 @@ export default async function HomePage({
       ) : null}
 
       <section className="mt-8 grid gap-4 md:grid-cols-3">
-        {dictionary.home.cards.map((item) => (
-          <article key={item.title} className="panel p-6">
-            <p className="font-display text-4xl tracking-[0.08em]">{item.title}</p>
-            <p className="mt-4 text-sm leading-7 text-white/70">{item.text}</p>
-          </article>
-        ))}
-      </section>
+  {(
+    (dictionary.home.cards as Array<{ title: string; text: string }> | undefined) ?? [
+      {
+        title: locale === 'ru' ? 'Архив' : 'Archive',
+        text:
+          locale === 'ru'
+            ? 'Каталог работ с авторскими карточками, фильтрацией и кураторской подачей.'
+            : 'A curated artwork catalog with author records, filters, and editorial structure.',
+      },
+      {
+        title: locale === 'ru' ? 'История' : 'History',
+        text:
+          locale === 'ru'
+            ? 'Интерактивный музейный раздел о становлении граффити-культуры и её ключевых фигурах.'
+            : 'An interactive museum-like section about the development of graffiti culture and its key figures.',
+      },
+      {
+        title: locale === 'ru' ? 'Сообщество' : 'Community',
+        text:
+          locale === 'ru'
+            ? 'Профили художников, публикация работ, модерация, комментарии и социальные связи.'
+            : 'Artist profiles, artwork submissions, moderation, comments, and community interaction.',
+      },
+    ]
+  ).map((item: { title: string; text: string }) => (
+    <article key={item.title} className="panel p-6">
+      <p className="font-display text-4xl tracking-[0.08em]">{item.title}</p>
+      <p className="mt-4 text-sm leading-7 text-white/70">{item.text}</p>
+    </article>
+  ))}
+</section>
 
       <section className="mt-8">
         <div className="mb-4 flex items-end justify-between gap-4">
@@ -130,11 +154,7 @@ export default async function HomePage({
           <h2 className="mt-5 font-display text-5xl tracking-[0.08em] md:text-6xl">{dictionary.home.sections.artists}</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {artists.slice(0, 4).map((artist) => (
-<<<<<<< HEAD
               <ArtistCard key={artist.id} artist={artist} locale={locale} />
-=======
-              <ArtistCard key={artist.id ?? artist.display_name ?? artist.name} artist={artist} locale={locale} />
->>>>>>> 79a5ba6cf827965ae447b20eac7da888d9156c3f
             ))}
           </div>
         </article>

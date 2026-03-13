@@ -25,12 +25,8 @@ export default async function ArtistsPage({ params }: { params: Promise<{ locale
 
       <section className="mt-8 grid-shell md:grid-cols-3">
         {artists.map((artist) => (
-<<<<<<< HEAD
-          <ArtistCard key={artist.id} artist={artist} locale={locale} />        ))}
-=======
-          <ArtistCard key={artist.id ?? artist.display_name ?? artist.name} artist={artist} locale={locale} />
+        <ArtistCard key={artist.id} artist={artist} locale={locale} />
         ))}
->>>>>>> 79a5ba6cf827965ae447b20eac7da888d9156c3f
       </section>
     </div>
   );

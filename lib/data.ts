@@ -421,36 +421,22 @@ export async function listArtworkComments(artworkId: string) {
     return [];
   }
 
-<<<<<<< HEAD
-  return (data ?? []).map((item) => {
-  const profileValue = item.profiles as
-    | { display_name?: string | null }
-    | Array<{ display_name?: string | null }>
-    | null
-    | undefined;
+    return (data ?? []).map((item) => {
+    const profileValue = item.profiles as
+      | { display_name?: string | null }
+      | Array<{ display_name?: string | null }>
+      | null
+      | undefined;
 
-  const authorName = Array.isArray(profileValue)
-    ? profileValue[0]?.display_name ?? 'User'
-    : profileValue?.display_name ?? 'User';
+    const authorName = Array.isArray(profileValue)
+      ? profileValue[0]?.display_name ?? 'User'
+      : profileValue?.display_name ?? 'User';
 
-  return {
-    ...item,
-    author_name: authorName,
-  };
-}) as CommentRecord[];
-=======
-  return data.map((item) => ({
-    id: item.id,
-    artwork_id: item.artwork_id,
-    user_id: item.user_id,
-    body: item.body,
-    created_at: item.created_at,
-    author_name:
-      Array.isArray(item.profiles)
-        ? item.profiles[0]?.display_name ?? 'User'
-        : item.profiles?.display_name ?? 'User',
-  })) as CommentRecord[];
->>>>>>> 79a5ba6cf827965ae447b20eac7da888d9156c3f
+    return {
+      ...item,
+      author_name: authorName,
+    };
+  }) as CommentRecord[];
 }
 
 export async function getArtistFollowState(artistId: string, viewerId?: string | null) {
