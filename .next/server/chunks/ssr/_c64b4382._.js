@@ -1,3 +1,0 @@
-module.exports=[35112,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactDOM},24028,a=>{"use strict";var b=a.i(87924),c=a.i(35112);function d({children:a,pendingLabel:d,variant:e="primary"}){let{pending:f}=(0,c.useFormStatus)();return(0,b.jsx)("button",{type:"submit",className:"secondary"===e?"button-secondary":"danger"===e?"button-danger":"button-primary",disabled:f,children:f?d:a})}a.s(["FormButton",()=>d])}];
-
-//# sourceMappingURL=_c64b4382._.js.map
