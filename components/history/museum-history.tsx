@@ -31,8 +31,15 @@ export function MuseumHistory({
 }) {
   const content = museumHistory[locale];
   const [activeEra, setActiveEra] = useState(content.eras[0]?.id ?? '');
+
   const allFigures = useMemo(
-    () => content.eras.flatMap((era) => era.figures.map((figure) => ({ ...figure, eraTitle: era.title }))),
+    () =>
+      content.eras.flatMap((era) =>
+        era.figures.map((figure) => ({
+          ...figure,
+          eraTitle: era.title,
+        }))
+      ),
     [content.eras]
   );
 
@@ -64,59 +71,66 @@ export function MuseumHistory({
   }, [content.eras]);
 
   return (
-    <div className="space-y-8">
-      <section className="history-museum-hero panel panel-glow overflow-hidden p-6 md:p-10">
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
-          <div>
+    <div className="space-y-6 md:space-y-8">
+      <section className="history-museum-hero panel panel-glow overflow-hidden p-5 sm:p-6 md:p-8 xl:p-10">
+        <div className="grid gap-6 xl:grid-cols-[minmax(0,1.05fr)_300px] xl:items-end">
+          <div className="min-w-0">
             <span className="pill">{content.hero.eyebrow}</span>
-            <h1 className="mt-5 max-w-5xl font-display text-6xl leading-none tracking-[0.08em] md:text-8xl">
+            <h1 className="mt-5 max-w-5xl break-words font-display text-4xl leading-none tracking-[0.05em] sm:text-6xl md:text-7xl xl:text-8xl">
               {content.hero.title}
             </h1>
-            <p className="mt-5 max-w-3xl text-xl leading-8 text-white/82 md:text-2xl">
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-white/82 md:text-xl">
               {content.hero.subtitle}
             </p>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-white/70 md:text-lg">{content.hero.lead}</p>
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-white/70 md:text-base md:leading-8">
+              {content.hero.lead}
+            </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <div className="grid gap-4 sm:grid-cols-3 xl:grid-cols-1">
             {content.hero.stats.map((item) => (
-              <article key={item.label} className="history-stat-card">
-                <p className="font-display text-5xl tracking-[0.08em] md:text-6xl">{item.value}</p>
+              <article key={item.label} className="history-stat-card min-w-0">
+                <p className="font-display text-4xl tracking-[0.08em] sm:text-5xl md:text-6xl">{item.value}</p>
                 <p className="mt-2 text-xs uppercase tracking-[0.18em] text-white/58">{item.label}</p>
               </article>
             ))}
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {content.pillars.map((item) => (
-            <article key={item.title} className="history-glass-card p-5">
-              <p className="font-display text-3xl tracking-[0.08em] md:text-4xl">{item.title}</p>
+            <article key={item.title} className="history-glass-card min-w-0 p-5">
+              <p className="font-display text-2xl tracking-[0.08em] md:text-3xl xl:text-4xl">{item.title}</p>
               <p className="mt-3 text-sm leading-7 text-white/72">{item.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[280px_1fr] lg:items-start">
-        <aside className="history-side-nav panel p-4 md:p-5 lg:sticky lg:top-24">
+      <section className="grid gap-6 xl:grid-cols-[260px_minmax(0,1fr)] xl:items-start">
+        <aside className="history-side-nav panel p-4 md:p-5 xl:sticky xl:top-24">
           <p className="text-xs uppercase tracking-[0.18em] text-white/46">{content.navTitle}</p>
-          <div className="mt-4 flex flex-wrap gap-2 lg:grid">
+
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-1">
             {content.eras.map((era) => (
               <button
                 key={era.id}
                 type="button"
                 onClick={() => {
                   setActiveEra(era.id);
-                  document.getElementById(`history-era-${era.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  document.getElementById(`history-era-${era.id}`)?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  });
                 }}
-                className={`history-nav-button ${activeEra === era.id ? 'history-nav-button-active' : ''}`}
+                className={`history-nav-button text-left ${activeEra === era.id ? 'history-nav-button-active' : ''}`}
               >
                 <span>{era.range}</span>
                 <strong>{era.navLabel}</strong>
               </button>
             ))}
           </div>
+
           <div className="history-reading-room mt-5 rounded-3xl border border-white/10 bg-white/4 p-4">
             <p className="text-xs uppercase tracking-[0.16em] text-white/50">{content.museumLabel}</p>
             <p className="mt-3 text-sm leading-7 text-white/74">
@@ -127,15 +141,22 @@ export function MuseumHistory({
           </div>
         </aside>
 
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           {content.eras.map((era) => (
-            <section key={era.id} id={`history-era-${era.id}`} className="history-era panel overflow-hidden p-5 md:p-7">
-              <div className="grid gap-6 xl:grid-cols-[0.86fr_1.14fr] xl:items-start">
-                <div className="space-y-4">
+            <section
+              key={era.id}
+              id={`history-era-${era.id}`}
+              className="history-era panel overflow-hidden p-5 md:p-7"
+            >
+              <div className="grid gap-6 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-start">
+                <div className="min-w-0 space-y-4">
                   <span className="pill">{era.range}</span>
-                  <h2 className="font-display text-5xl leading-none tracking-[0.08em] md:text-7xl">{era.title}</h2>
+                  <h2 className="break-words font-display text-4xl leading-none tracking-[0.06em] sm:text-5xl md:text-6xl xl:text-7xl">
+                    {era.title}
+                  </h2>
                   <p className="text-xs uppercase tracking-[0.18em] text-white/50">{era.kicker}</p>
-                  <p className="max-w-2xl text-base leading-8 text-white/76">{era.summary}</p>
+                  <p className="max-w-2xl text-sm leading-7 text-white/76 md:text-base md:leading-8">{era.summary}</p>
+
                   <div className="rounded-3xl border border-white/10 bg-white/4 p-5">
                     <p className="text-xs uppercase tracking-[0.16em] text-white/52">
                       {locale === 'ru' ? 'Почему это важно' : 'Why it matters'}
@@ -144,11 +165,18 @@ export function MuseumHistory({
                   </div>
                 </div>
 
-                <div className="space-y-5">
-                  <div className="grid gap-4 md:grid-cols-3">
+                <div className="min-w-0 space-y-5">
+                  <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                     {era.galleryNotes.map((note) => (
-                      <article key={note.title} className="history-poster-card overflow-hidden rounded-3xl border border-white/10 bg-white/3">
-                        <img className="h-48 w-full object-cover" src={posterDataUrl(note.word, note.title.toUpperCase())} alt={note.title} />
+                      <article
+                        key={note.title}
+                        className="history-poster-card overflow-hidden rounded-3xl border border-white/10 bg-white/3"
+                      >
+                        <img
+                          className="h-40 w-full object-cover sm:h-48"
+                          src={posterDataUrl(note.word, note.title.toUpperCase())}
+                          alt={note.title}
+                        />
                         <div className="p-4">
                           <p className="text-xs uppercase tracking-[0.16em] text-white/45">{note.title}</p>
                           <p className="mt-2 text-sm leading-6 text-white/74">{note.caption}</p>
@@ -175,27 +203,39 @@ export function MuseumHistory({
             </section>
           ))}
 
-          <section className="panel p-6 md:p-8">
+          <section className="panel overflow-hidden p-5 md:p-6 xl:p-8">
             <span className="pill">{content.figureSection.eyebrow}</span>
-            <h2 className="mt-5 font-display text-5xl tracking-[0.08em] md:text-7xl">{content.figureSection.title}</h2>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-white/72 md:text-lg">{content.figureSection.subtitle}</p>
+            <h2 className="mt-5 break-words font-display text-4xl tracking-[0.06em] sm:text-5xl md:text-6xl xl:text-7xl">
+              {content.figureSection.title}
+            </h2>
+            <p className="mt-5 max-w-4xl text-sm leading-7 text-white/72 md:text-base md:leading-8">
+              {content.figureSection.subtitle}
+            </p>
 
             <div className="mt-8 grid gap-4 xl:grid-cols-2">
               {allFigures.map((figure) => (
-                <details key={figure.id} className="history-figure-card rounded-3xl border border-white/10 bg-white/4 p-5 open:border-white/20 open:bg-white/5">
-                  <summary className="grid cursor-pointer gap-4 list-none md:grid-cols-[190px_1fr] md:items-start">
+                <details
+                  key={figure.id}
+                  className="history-figure-card rounded-3xl border border-white/10 bg-white/4 p-5 open:border-white/20 open:bg-white/5"
+                >
+                  <summary className="grid list-none cursor-pointer gap-4 md:grid-cols-[160px_minmax(0,1fr)] md:items-start">
                     <img
                       src={posterDataUrl(figure.posterWord, figure.name.toUpperCase())}
                       alt={figure.name}
-                      className="h-44 w-full rounded-[24px] border border-white/10 object-cover md:h-full"
+                      className="h-40 w-full rounded-[24px] border border-white/10 object-cover md:h-full"
                     />
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-xs uppercase tracking-[0.16em] text-white/48">{figure.eraTitle}</p>
-                      <h3 className="mt-2 font-display text-4xl leading-none tracking-[0.08em]">{figure.name}</h3>
-                      <p className="mt-2 text-xs uppercase tracking-[0.16em] text-white/55">{figure.years} / {figure.role}</p>
+                      <h3 className="mt-2 break-words font-display text-3xl leading-none tracking-[0.08em] md:text-4xl">
+                        {figure.name}
+                      </h3>
+                      <p className="mt-2 text-xs uppercase tracking-[0.16em] text-white/55">
+                        {figure.years} / {figure.role}
+                      </p>
                       <p className="mt-4 text-sm leading-7 text-white/72">{figure.summary}</p>
                     </div>
                   </summary>
+
                   <div className="mt-5 border-t border-white/10 pt-5">
                     <p className="text-xs uppercase tracking-[0.16em] text-white/48">
                       {locale === 'ru' ? 'Главный вклад' : 'Why this figure matters'}
@@ -214,15 +254,27 @@ export function MuseumHistory({
             </div>
           </section>
 
-          <section className="panel p-6 md:p-8">
+          <section className="panel overflow-hidden p-5 md:p-6 xl:p-8">
             <span className="pill">{content.readingRoom.eyebrow}</span>
-            <h2 className="mt-5 font-display text-5xl tracking-[0.08em] md:text-7xl">{content.readingRoom.title}</h2>
-            <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            <h2 className="mt-5 break-words font-display text-4xl tracking-[0.06em] sm:text-5xl md:text-6xl xl:text-7xl">
+              {content.readingRoom.title}
+            </h2>
+
+            <div className="mt-8 grid gap-4 xl:grid-cols-2">
               {content.readingRoom.items.map((item) => (
-                <article key={item.title} className="history-reading-card rounded-3xl border border-white/10 bg-white/4 p-5 md:grid md:grid-cols-[160px_1fr] md:items-center md:gap-5">
-                  <img src={posterDataUrl(item.word, item.word)} alt={item.title} className="h-36 w-full rounded-[22px] border border-white/10 object-cover" />
-                  <div>
-                    <p className="font-display text-3xl tracking-[0.08em] md:text-4xl">{item.title}</p>
+                <article
+                  key={item.title}
+                  className="history-reading-card rounded-3xl border border-white/10 bg-white/4 p-5 sm:grid sm:grid-cols-[140px_minmax(0,1fr)] sm:items-center sm:gap-5"
+                >
+                  <img
+                    src={posterDataUrl(item.word, item.word)}
+                    alt={item.title}
+                    className="h-32 w-full rounded-[22px] border border-white/10 object-cover sm:h-36"
+                  />
+                  <div className="mt-4 min-w-0 sm:mt-0">
+                    <p className="break-words font-display text-2xl tracking-[0.08em] md:text-3xl xl:text-4xl">
+                      {item.title}
+                    </p>
                     <p className="mt-3 text-sm leading-7 text-white/72">{item.text}</p>
                   </div>
                 </article>
@@ -230,9 +282,12 @@ export function MuseumHistory({
             </div>
           </section>
 
-          <section className="panel p-6 md:p-8">
+          <section className="panel overflow-hidden p-5 md:p-6 xl:p-8">
             <span className="pill">{content.curatorSection.eyebrow}</span>
-            <h2 className="mt-5 font-display text-5xl tracking-[0.08em] md:text-7xl">{content.curatorSection.title}</h2>
+            <h2 className="mt-5 break-words font-display text-4xl tracking-[0.06em] sm:text-5xl md:text-6xl xl:text-7xl">
+              {content.curatorSection.title}
+            </h2>
+
             {entries.length > 0 ? (
               <div className="mt-8 grid gap-4">
                 {entries.map((item) => (
@@ -248,8 +303,12 @@ export function MuseumHistory({
               </div>
             ) : (
               <div className="notice notice-info mt-8">
-                <h3 className="font-display text-3xl tracking-[0.08em]">{content.curatorSection.emptyTitle}</h3>
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-white/72">{content.curatorSection.emptyText}</p>
+                <h3 className="font-display text-2xl tracking-[0.08em] md:text-3xl">
+                  {content.curatorSection.emptyTitle}
+                </h3>
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-white/72">
+                  {content.curatorSection.emptyText}
+                </p>
               </div>
             )}
           </section>
