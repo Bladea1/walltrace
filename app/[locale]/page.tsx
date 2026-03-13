@@ -130,7 +130,11 @@ export default async function HomePage({
           <h2 className="mt-5 font-display text-5xl tracking-[0.08em] md:text-6xl">{dictionary.home.sections.artists}</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {artists.slice(0, 4).map((artist) => (
+<<<<<<< HEAD
               <ArtistCard key={artist.id} artist={artist} locale={locale} />
+=======
+              <ArtistCard key={artist.id ?? artist.display_name ?? artist.name} artist={artist} locale={locale} />
+>>>>>>> 79a5ba6cf827965ae447b20eac7da888d9156c3f
             ))}
           </div>
         </article>
