@@ -1,0 +1,35 @@
+{
+  "node": {
+    "40a2cd77cb27b827aba865713c744fea8d37c4c12f": {
+      "workers": {
+        "app/[locale]/profile/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/profile/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/[locale]/profile/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logoutAction",
+          "filename": "app/[locale]/profile/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/profile/page": "rsc"
+      },
+      "exportedName": "logoutAction",
+      "filename": "app/[locale]/profile/actions.ts"
+    },
+    "604ebd98d11bddfd311f900162a9f4700296b18907": {
+      "workers": {
+        "app/[locale]/profile/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/profile/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/[locale]/profile/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateProfileAction",
+          "filename": "app/[locale]/profile/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/profile/page": "rsc"
+      },
+      "exportedName": "updateProfileAction",
+      "filename": "app/[locale]/profile/actions.ts"
+    }
+  },
+  "edge": {}
+}

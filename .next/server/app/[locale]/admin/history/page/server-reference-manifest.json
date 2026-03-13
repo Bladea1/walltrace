@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60c405715c00031d91cb17eb19bb7c66e5aa7648fe": {
+      "workers": {
+        "app/[locale]/admin/history/page": {
+          "moduleId": 44243,
+          "async": false,
+          "exportedName": "createHistoryEntryAction",
+          "filename": "app/[locale]/admin/history/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/history/page": "rsc"
+      },
+      "exportedName": "createHistoryEntryAction",
+      "filename": "app/[locale]/admin/history/actions.ts"
+    },
+    "60ed315114c8c6572db8bb205996af503c376ef67b": {
+      "workers": {
+        "app/[locale]/admin/history/page": {
+          "moduleId": 44243,
+          "async": false,
+          "exportedName": "deleteHistoryEntryAction",
+          "filename": "app/[locale]/admin/history/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/history/page": "rsc"
+      },
+      "exportedName": "deleteHistoryEntryAction",
+      "filename": "app/[locale]/admin/history/actions.ts"
+    },
+    "70aa39a198caf95d3cf831dc16642499a1a283a75e": {
+      "workers": {
+        "app/[locale]/admin/history/page": {
+          "moduleId": 44243,
+          "async": false,
+          "exportedName": "toggleHistoryPublishedAction",
+          "filename": "app/[locale]/admin/history/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/history/page": "rsc"
+      },
+      "exportedName": "toggleHistoryPublishedAction",
+      "filename": "app/[locale]/admin/history/actions.ts"
+    }
+  },
+  "edge": {}
+}

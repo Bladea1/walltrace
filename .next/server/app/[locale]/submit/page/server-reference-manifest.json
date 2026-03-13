@@ -1,0 +1,20 @@
+{
+  "node": {
+    "6088481c7fce1a84e00f8c9839ba050eba8e152069": {
+      "workers": {
+        "app/[locale]/submit/page": {
+          "moduleId": 70756,
+          "async": false,
+          "exportedName": "submitArtworkAction",
+          "filename": "app/[locale]/submit/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/submit/page": "rsc"
+      },
+      "exportedName": "submitArtworkAction",
+      "filename": "app/[locale]/submit/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,50 @@
+{
+  "node": {
+    "6047d5b0872bcff2f033062e109a1b8dbb3aefe58f": {
+      "workers": {
+        "app/[locale]/admin/news/page": {
+          "moduleId": 52002,
+          "async": false,
+          "exportedName": "deleteNewsPostAction",
+          "filename": "app/[locale]/admin/news/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/news/page": "rsc"
+      },
+      "exportedName": "deleteNewsPostAction",
+      "filename": "app/[locale]/admin/news/actions.ts"
+    },
+    "60a687effb42c1c40b71f0bf1ab4520f6bc6edaf12": {
+      "workers": {
+        "app/[locale]/admin/news/page": {
+          "moduleId": 52002,
+          "async": false,
+          "exportedName": "createNewsPostAction",
+          "filename": "app/[locale]/admin/news/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/news/page": "rsc"
+      },
+      "exportedName": "createNewsPostAction",
+      "filename": "app/[locale]/admin/news/actions.ts"
+    },
+    "703795f1c083765499827e78d4da5cf16e73d5920a": {
+      "workers": {
+        "app/[locale]/admin/news/page": {
+          "moduleId": 52002,
+          "async": false,
+          "exportedName": "toggleNewsPublishedAction",
+          "filename": "app/[locale]/admin/news/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/news/page": "rsc"
+      },
+      "exportedName": "toggleNewsPublishedAction",
+      "filename": "app/[locale]/admin/news/actions.ts"
+    }
+  },
+  "edge": {}
+}

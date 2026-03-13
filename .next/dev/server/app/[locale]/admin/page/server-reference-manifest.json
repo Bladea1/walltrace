@@ -1,0 +1,50 @@
+{
+  "node": {
+    "6010022725490fa4eea8bb31a17b04965ff5860a7c": {
+      "workers": {
+        "app/[locale]/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/[locale]/admin/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteArtworkAction",
+          "filename": "app/[locale]/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/page": "rsc"
+      },
+      "exportedName": "deleteArtworkAction",
+      "filename": "app/[locale]/admin/actions.ts"
+    },
+    "6063d5bcad2b5608a773908e0e833dc655148dd722": {
+      "workers": {
+        "app/[locale]/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/[locale]/admin/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "rejectArtworkAction",
+          "filename": "app/[locale]/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/page": "rsc"
+      },
+      "exportedName": "rejectArtworkAction",
+      "filename": "app/[locale]/admin/actions.ts"
+    },
+    "6098b71f74ab8918c10ba3cc782f2cf3fb1b7ae551": {
+      "workers": {
+        "app/[locale]/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/[locale]/admin/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "approveArtworkAction",
+          "filename": "app/[locale]/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/admin/page": "rsc"
+      },
+      "exportedName": "approveArtworkAction",
+      "filename": "app/[locale]/admin/actions.ts"
+    }
+  },
+  "edge": {}
+}
