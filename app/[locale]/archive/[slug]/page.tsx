@@ -42,8 +42,8 @@ export default async function ArtworkRecordPage({
   ]);
 
   const error = getSingleSearchParam(sp.error);
-  const authorHref = artwork.user_id ? `/${locale}/artists/${artwork.user_id}` : null;
-
+  const authorId = 'user_id' in artwork ? artwork.user_id : null;
+  const authorHref = authorId ? `/${locale}/artists/${authorId}` : null;
   return (
     <div className="container-shell py-8 md:py-12">
       <div className="mb-6">
