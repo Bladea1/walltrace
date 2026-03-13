@@ -80,7 +80,7 @@ export default async function HomePage({
 
       <section className="mt-8 grid gap-4 md:grid-cols-3">
   {(
-    (dictionary.home.cards as Array<{ title: string; text: string }> | undefined) ?? [
+    (dictionary.home.cards as ReadonlyArray<{ title: string; text: string }> | undefined) ?? [
       {
         title: locale === 'ru' ? 'Архив' : 'Archive',
         text:
