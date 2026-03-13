@@ -129,3 +129,21 @@ img {
 .textarea-shell::placeholder {
   color: rgba(255,255,255,0.35);
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}

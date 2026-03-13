@@ -16,7 +16,7 @@ export async function SiteShell({
   const authState = await getAuthState();
 
   return (
-    <>
+    <div className="min-h-screen overflow-x-hidden">
       <SiteHeader
         locale={locale}
         dictionary={dictionary}
@@ -25,8 +25,8 @@ export async function SiteShell({
         profileName={authState.profile?.display_name ?? authState.profile?.username ?? null}
         profileAvatarUrl={authState.profile?.avatar_url ?? null}
       />
-      <main>{children}</main>
+      <main className="overflow-x-hidden">{children}</main>
       <SiteFooter locale={locale} dictionary={dictionary} />
-    </>
+    </div>
   );
 }
